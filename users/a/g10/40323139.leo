@@ -1424,7 +1424,6 @@ m1, n1 = mychain.basic_rot(x1, y1, '''+str(first_degree)+''')
     # 下段連接直線
     # 從 x11, y11 作為起點
     first_degree = -10.78+90+0.5
-
     repeat = 10
     outstring += '''
 r1, s1 = mychain.basic_rot(x11, y11, '''+str(first_degree)+''')
@@ -2390,9 +2389,9 @@ app.secret_key = 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T'
 
 
 </t>
-<t tx="leo.20160616204950.1">@ag10_40323139_1.route('/gears', defaults={'n1':17,'n2':29,'n3':15})
-@ag10_40323139_1.route('/gears/&lt;n1&gt;/&lt;n2&gt;/&lt;n3&gt;')
-def gears(n1, n2, n3):
+<t tx="leo.20160616204950.1">@ag10_40323139_1.route('/gears', defaults={'n1':17,'n2':29,'n3':15,'n4':25})
+@ag10_40323139_1.route('/gears/&lt;n1&gt;/&lt;n2&gt;/&lt;n3&gt;/&lt;n4&gt;')
+def gears(n1, n2, n3, n4):
     outstring = '''
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -2496,11 +2495,12 @@ def spur(cx, cy, m, n, pa, theta):
           'strokeColor':'blue', 'lineWidth': 1})
     cgo.render(Line)
  
-# 3個齒輪的齒數
+# 4個齒輪的齒數
 n1 = 17
 n2 = 29
 n3 = 15
 n4 = 25
+
  
 # m 為模數, 根據畫布的寬度, 計算適合的模數大小
 # Module = mm of pitch diameter per tooth
@@ -2516,6 +2516,7 @@ pr4 = n4*m/2
  
 # 畫布左右兩側都保留畫布寬度的 10%
 # 依此計算對應的最左邊齒輪的軸心座標
+
 cx = canvas.width*0.1+pr1
 cy = canvas.height/2
  
